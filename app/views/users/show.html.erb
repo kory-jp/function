@@ -1,2 +1,24 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+  <aside class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+      <div calss="panel-body al-c">
+        <% if @user.image? %>
+          <%= image_tag @user.image, :class => "mw50" %>
+          <% else %>
+          <%= image_tag("/images/icon/icon-mama-02-160px.png") %>
+        <% end %>
+      </div>
+    </div>
+  </aside>
+  <div class="col-md-8">
+    <p><span class="orange b"><%= @user.name %></span>
+    &nbsp;<%= @user.address %>
+    <% if @user.age.present? %> &nbsp;<%= @user.age %>代 <% end %>
+    &nbsp;<%= @user.sex %></p>
+    <p class="orange b">自己紹介</p>
+    <p><%= @user.introduce %></p>
+  </div>
+</div>
